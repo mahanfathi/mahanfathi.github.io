@@ -1,301 +1,168 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-<!-- 2021-02-19 Fri 15:31 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mahan Fathi</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="Mahan Fathi" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
-    padding: 3px;
-    border: 1px solid black;
-  }
-  pre.src:hover:before { display: inline;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
+<!DOCTYPE HTML>
+<!--
+	Astral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Astral by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css"/>
+		<link rel="stylesheet" href="assets/css/onclick_style.css">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
-</style>
-<link rel="stylesheet" type="text/css" href="stylesheet.css" />
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.cacheClassElem = elem.className;
-         elem.cacheClassTarget = target.className;
-         target.className = "code-highlighted";
-         elem.className   = "code-highlighted";
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(elem.cacheClassElem)
-         elem.className = elem.cacheClassElem;
-       if(elem.cacheClassTarget)
-         target.className = elem.cacheClassTarget;
-     }
-    /*]]>*///-->
-// @license-end
-</script>
-</head>
-<body>
-<div id="content">
-<h1 class="title">Mahan Fathi</h1>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+		<!-- Wrapper-->
+			<div id="wrapper">
 
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#" class="icon solid fa-home"><span>Home</span></a>
+						<a href="#aboutme" class="icon solid fa-info"><span>About me</span></a>
+						<a href="https://www.linkedin.com/in/mahanfathi/" class="icon brands fa-linkedin" target="_blank"><span>LinkedIn</span></a>
+						<a href="https://github.com/MahanFathi" class="icon brands fa-github" target="_blank"><span>GitHub</span></a>
+						<a href="mailto:mahan.fathi@mila.quebec" class="icon solid fa-envelope"><span>Email</span></a>
+					</nav>
 
-<colgroup>
-<col  class="org-left" />
-</colgroup>
-<tbody>
-<tr>
-<td class="org-left"><a href="mailto:mahan0fathi@gmail.com">mahan0fathi@gmail.com</a></td>
-</tr>
-</tbody>
-</table>
+				<!-- Main -->
+					<div id="main">
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+						<!-- Me -->
+							<article id="home" class="panel intro">
+								<header>
+									<h1>Mahan Fathi</h1>
+									<h2>ماهان فتحی</h2>
+									<p><i class="fas fa-graduation-cap"></i>&nbsp; MSc Student at Mila</p>
+									<p><i class="fab fa-google"></i>&nbsp; Student Researcher at Google Brain</p>
+									<p><a href="uploads/mahan_fathi_cv.pdf" target="_blank" style="text-decoration: none; color: inherit;" <i class="fas fa-file"></i></a>&nbsp; <a href="uploads/mahan_fathi_cv.pdf" style="color: pink;" target="_blank">Curriculum Vitae</a></p>
+								</header>
+								<a href="#aboutme" class="jumplink pic">
+									<span class="arrow icon solid fa-chevron-right"><span>More about me...</span></span>
+									<img src="images/me.png" alt="" />
+								</a>
+							</article>
 
+						<!-- About me -->
+							<article id="aboutme" class="panel">
+								<header>
+									<h2>About me!</h2>
+								</header>
+								<p>Hi there! ( ◕ ◡ ◕)</p>
+								<p>
+									My name is Mahan Fathi (ماهان فتحی), I am a MSc student at Mila, advised by <a href="https://pierrelucbacon.com/" target="_blank" style="color: pink;">Pierre-Luc Bacon</a>,
+									with a focus on Reinforcement Learning.
+									I am also a student researcher at <a href="https://research.google/locations/montreal/" target="_blank" style="color: pink;">Google Brain Montreal</a>,
+									supervised by <a href="https://goroshin.github.io/" target="_blank" style="color: pink;">Ross Goroshin</a>.
+									It&apos;s hard for me to pinpoint what exactly my research interests are; pretty much all things ML interest me, <em>so long as the research is done right</em>.
+									I am a strong refuser of the wrong "publish or perish" mindset, and have no interest in publishing <em>uninspiring</em> work.
+									To me, the upshot of Reinforcement Learning research from the past few years is that RL needs a major overhaul.
+									To this end, during my PhD, I&apos;m looking to conduct my research on training agents that learn to solve MDPs by directly optimizing for the metrics
+									that we we consider important for a typical RL algorithm, i.e. sample efficiency, safe exploration, etc.
+									I believe recent advances in meta-learning and sequence modeling could potentially help us take the next leap in RL.
+								</p>
 
-<colgroup>
-<col  class="org-left" />
+								<p>
+									I received my bachelor in Mechanical Engineering from Sharif University of Technology in 2017. Towards the end of my studies I got involved in Robotics and Control,
+									and found Deep Reinforcement Learning as a very powerful tool to tackle previously unsolved tasks in locomotion, etc.
+									I then worked for 3 years as a Software Engineer, Data Scientist, and Team Leader in top tech companies of Iran, namely CafeBazaar (user-base of 50 millions) and TAPSI.
+									I also spent a summer as a research assistant at Aalto University under the supervision of
+									<a href="https://scholar.google.com/citations?user=i90uqXUAAAAJ&hl=da" target="_blank" style="color: pink;">Perttu Hämäläinen</a>, looking more into model-based RL.
+								</p>
 
-<col  class="org-left" />
+								<p>
+									For a more detailed summary of my experience please refer to my
+									<a href="uploads/mahan_fathi_cv.pdf" target="_blank" style="color: pink;">Curriculum Vitae</a>.
+								</p>
 
-<col  class="org-left" />
+								<!-- <section> -->
+								<!-- 	<div class="row"> -->
+								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
+								<!-- 			<a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a> -->
+								<!-- 		</div> -->
+								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
+								<!-- 			<a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a> -->
+								<!-- 		</div> -->
+								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
+								<!-- 			<a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a> -->
+								<!-- 		</div> -->
+								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
+								<!-- 			<a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a> -->
+								<!-- 		</div> -->
+								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
+								<!-- 			<a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a> -->
+								<!-- 		</div> -->
+								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
+								<!-- 			<a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a> -->
+								<!-- 		</div> -->
+								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
+								<!-- 			<a href="#" class="image fit"><img src="images/pic07.jpg" alt=""></a> -->
+								<!-- 		</div> -->
+								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
+								<!-- 			<a href="#" class="image fit"><img src="images/pic08.jpg" alt=""></a> -->
+								<!-- 		</div> -->
+								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
+								<!-- 			<a href="#" class="image fit"><img src="images/pic09.jpg" alt=""></a> -->
+								<!-- 		</div> -->
+								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
+								<!-- 			<a href="#" class="image fit"><img src="images/pic10.jpg" alt=""></a> -->
+								<!-- 		</div> -->
+								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
+								<!-- 			<a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a> -->
+								<!-- 		</div> -->
+								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
+								<!-- 			<a href="#" class="image fit"><img src="images/pic12.jpg" alt=""></a> -->
+								<!-- 		</div> -->
+								<!-- 	</div> -->
+								<!-- </section> -->
+							</article>
 
-<col  class="org-left" />
+						<!-- Contact -->
+							<!-- <article id="contact" class="panel"> -->
+							<!-- 	<header> -->
+							<!-- 		<h2>Contact Me</h2> -->
+							<!-- 	</header> -->
+							<!-- 	<form action="#" method="post"> -->
+							<!-- 		<div> -->
+							<!-- 			<div class="row"> -->
+							<!-- 				<div class="col-6 col-12-medium"> -->
+							<!-- 					<input type="text" name="name" placeholder="Name" /> -->
+							<!-- 				</div> -->
+							<!-- 				<div class="col-6 col-12-medium"> -->
+							<!-- 					<input type="text" name="email" placeholder="Email" /> -->
+							<!-- 				</div> -->
+							<!-- 				<div class="col-12"> -->
+							<!-- 					<input type="text" name="subject" placeholder="Subject" /> -->
+							<!-- 				</div> -->
+							<!-- 				<div class="col-12"> -->
+							<!-- 					<textarea name="message" placeholder="Message" rows="6"></textarea> -->
+							<!-- 				</div> -->
+							<!-- 				<div class="col-12"> -->
+							<!-- 					<input type="submit" value="Send Message" /> -->
+							<!-- 				</div> -->
+							<!-- 			</div> -->
+							<!-- 		</div> -->
+							<!-- 	</form> -->
+							<!-- </article> -->
 
-<col  class="org-left" />
+					</div>
 
-<col  class="org-left" />
-</colgroup>
-<tbody>
-<tr>
-<td class="org-left"><a href="https://mahanfathi.github.io/"><b>HOME</b></a></td>
-<td class="org-left"><a href="https://github.com/MahanFathi"><b>GitHub</b></a></td>
-<td class="org-left"><a href="https://www.linkedin.com/in/mahanfathi/"><b>LinkedIn</b></a></td>
-<td class="org-left"><a href="http://medium.com/@mahanfathi"><b>Medium</b></a></td>
-<td class="org-left"><a href="https://join.skype.com/invite/i9CZ1i4Jegmb"><b>Skype</b></a></td>
-<td class="org-left"><a href="https://www.instagram.com/8iteme/"><b>Instagram</b></a></td>
-</tr>
-</tbody>
-</table>
+				<!-- Footer -->
+					<div id="footer" style="display: flex; color: white; font-size: 24px;">
+							Feel free to reach out to me at:&nbsp; <p onclick="copyToClipboard(event, 'mahan.fathi@mila.quebec')">mahan.fathi@mila.quebec</p>
+					</div>
 
-<hr />
+			</div>
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/onclick.js"></script>
 
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<tbody>
-<tr>
-<td class="org-left"><img src="./resources/profile_picture.jpg" alt="profile_picture.jpg" /></td>
-<td class="org-left">I am a MSc student at Mila in Computer Science under supervision of Prof. Pierre-Luc Bacon. I received my B.Sc. in Mechanical Engineering at Sharif University of Technology. Leveraging Machine Learning and Optimization to endow robots with an extensive repertoire of skills, and fusing ideas from classical control theory with recent advances in A.I. appeal to me more than anything. To this end, I seek to conduct my research on synthesis of complex motions via model-based optimization and reinforcement learning in general for generation of natural-looking character animation.</td>
-</tr>
-</tbody>
-</table>
-
-<hr />
-
-<div id="outline-container-org453521b" class="outline-2">
-<h2 id="org453521b"><a href="cv/index.html">Curriculum Vitae</a></h2>
-<div class="outline-text-2" id="text-org453521b">
-</div>
-</div>
-
-<div id="outline-container-orgb69991d" class="outline-2">
-<h2 id="orgb69991d"><a href="blog/index.html">Blog</a></h2>
-</div>
-</div>
-<div id="postamble" class="status">
-<p class="author">Author: Mahan Fathi</p>
-<p class="date">Created: 2021-02-19 Fri 15:31</p>
-</div>
-</body>
+	</body>
 </html>

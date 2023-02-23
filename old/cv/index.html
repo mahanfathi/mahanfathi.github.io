@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-02-19 Fri 15:31 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mahan Fathi</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Mahan Fathi Mahan Fathi" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Mahan Fathi
+<br />
+<span class="subtitle">Curriculum Vitae</span>
+</h1>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><a href="mailto:mahan0fathi@gmail.com">mahan0fathi@gmail.com</a></td>
+</tr>
+</tbody>
+</table>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><a href="https://mahanfathi.github.io/"><b>HOME</b></a></td>
+<td class="org-left"><a href="https://github.com/MahanFathi"><b>GitHub</b></a></td>
+<td class="org-left"><a href="https://www.linkedin.com/in/mahanfathi/"><b>LinkedIn</b></a></td>
+<td class="org-left"><a href="http://medium.com/@mahanfathi"><b>Medium</b></a></td>
+<td class="org-left"><a href="https://join.skype.com/invite/i9CZ1i4Jegmb"><b>Skype</b></a></td>
+<td class="org-left"><a href="https://www.instagram.com/8iteme/"><b>Instagram</b></a></td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><img src="../resources/profile_picture.jpg" alt="profile_picture.jpg" /></td>
+<td class="org-left">I am a MSc student at Mila in Computer Science under supervision of Prof. Pierre-Luc Bacon. I received my B.Sc. in Mechanical Engineering at Sharif University of Technology. Leveraging Machine Learning and Optimization to endow robots with an extensive repertoire of skills, and fusing ideas from classical control theory with recent advances in A.I. appeal to me more than anything. To this end, I seek to conduct my research on synthesis of complex motions via model-based optimization and reinforcement learning in general for generation of natural-looking character animation.</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+
+<div id="outline-container-org727aa92" class="outline-2">
+<h2 id="org727aa92">Education</h2>
+<div class="outline-text-2" id="text-org727aa92">
+</div>
+<div id="outline-container-orgfc50c21" class="outline-4">
+<h4 id="orgfc50c21">Mila: Montreal Institute for Learning Algorithms (M.Sc.) [2020-22]</h4>
+<div class="outline-text-4" id="text-orgfc50c21">
+<p class="verse">
+University of Montreal, School of Computer Science. Advised by Prof. <a href="http://pierrelucbacon.com/">Pierre-Luc Bacon</a>.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgc6ce3a3" class="outline-4">
+<h4 id="orgc6ce3a3">Sharif University of Technology (B.Sc.) [2013-17. GPA: 3.88/4.0]</h4>
+<div class="outline-text-4" id="text-orgc6ce3a3">
+<p class="verse">
+School of Mechanical Engineering, Dynamics and Control.<br />
+<a href="http://www.openthesis.org/document/view/603263_0.pdf">Bachelor Thesis</a>: Nonlinear Control of a Ballbot, with Focus on Sample-Based Motion Planning Algorithms.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org1c42ca9" class="outline-4">
+<h4 id="org1c42ca9">NODET: High School [2009-13. GPA: 19.3/20.0]</h4>
+<div class="outline-text-4" id="text-org1c42ca9">
+<p class="verse">
+National Organization for Development of Exceptional Talents, Mathematics and Physics.<br />
+</p>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-org71f537b" class="outline-2">
+<h2 id="org71f537b">Awards and Fellowships</h2>
+<div class="outline-text-2" id="text-org71f537b">
+</div>
+<div id="outline-container-org8e191fc" class="outline-4">
+<h4 id="org8e191fc">Research Assistantship at Aalto University [Jun. to Sep. 2019]</h4>
+<div class="outline-text-4" id="text-org8e191fc">
+<p class="verse">
+AI, ML, and Game Development. Prof. <a href="http://perttu.info/">Perttu Hämäläinen</a>.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgacc8db2" class="outline-4">
+<h4 id="orgacc8db2">Awarded Membership to National Elite Foundation [Aug. 2013]</h4>
+</div>
+<div id="outline-container-orgcfc887e" class="outline-4">
+<h4 id="orgcfc887e">Silver Medalist at 25th National Physics Olympiad [Sep. 2012]</h4>
+<div class="outline-text-4" id="text-orgcfc887e">
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-orged53edd" class="outline-2">
+<h2 id="orged53edd">Publications</h2>
+<div class="outline-text-2" id="text-orged53edd">
+</div>
+<div id="outline-container-orgea4d650" class="outline-4">
+<h4 id="orgea4d650">Control of a Ballbot Using Sampling-Based Methods (1st Author)</h4>
+<div class="outline-text-4" id="text-orgea4d650">
+<p class="verse">
+Submitted to Scientia Iranica, published by Sharif University of Technology.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org1d809eb" class="outline-4">
+<h4 id="org1d809eb"><a href="https://www.civilica.com/Paper-ISME24-ISME24_657.html">Geometry Optimization of a Single-Blade Windshield Wiper</a> (1st Author)</h4>
+<div class="outline-text-4" id="text-org1d809eb">
+<p class="verse">
+ISME2016: 24th Annual International Conference on Mechanical Engineering.<br />
+</p>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6ae1d18" class="outline-2">
+<h2 id="org6ae1d18">Research</h2>
+<div class="outline-text-2" id="text-org6ae1d18">
+</div>
+<div id="outline-container-org95d3839" class="outline-4">
+<h4 id="org95d3839"><a href="https://github.com/MahanFathi/Model-Based-RL">Model-Based Policy Gradients</a> [Jul. to Sep. 2019]</h4>
+<div class="outline-text-4" id="text-org95d3839">
+<p class="verse">
+Motions emerge from directly back-proping into policy networks using reparam trick and physics gradients calculated in MuJoCo.<br />
+To backprop into stochastic policies, given an unknown model, one has to use the REINFORCE theory, to be able to calculate the gradients by sampling the environment. These methods usually have high variance, so baselines and value/advantage functions were introduced. Another way to backpropagate into your policy network is to use the “reparameterization trick” as in VAEs, but they entail knowledge of upstream gradients, and hence a known model. The policy gradients calculated w/ the reparam trick are often much lower in variance, so one can go wo/ baselines and value networks. This project puts it all together: computation graph of policy and dynamics, upstream gradients from MuJoCo dynamics and rewards, reparam trick, and optimization.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org6f30f58" class="outline-4">
+<h4 id="org6f30f58"><a href="https://github.com/MahanFathi/Unity2OpenSim">Unity2OpenSim</a> [Jun. to Jul. 2019]</h4>
+<div class="outline-text-4" id="text-org6f30f58">
+<p class="verse">
+A corss-platform painless pipeline to perform Inverse Kinematics/Dynamics of OpenSim on Unity models and motions.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org24f8c80" class="outline-4">
+<h4 id="org24f8c80"><a href="https://github.com/MahanFathi/iLQG-MuJoCo">MPC of MuJoCo Agents Using iLQG</a> [Dec. 2017 to Jan. 2018]</h4>
+<div class="outline-text-4" id="text-org24f8c80">
+<p class="verse">
+Inspired by the work of Todorov et al., implemented a fast Iterative LQG solver that reliably commands agents, such as the Hopper, in MPC mode, in presence of external forces.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orge9a63c3" class="outline-4">
+<h4 id="orge9a63c3">Motion Mimic [Nov. 2017 to Jan. 2018]</h4>
+<div class="outline-text-4" id="text-orge9a63c3">
+<p class="verse">
+Thanks to the readily available CMU MoCap, a bottom-half MuJoCo model of a bipedal is able to stably and naturally walk via <b>Generative Adversarial Imitation Learning(TRPO)</b> and stading punching motions are succesfuly mimiced for a humanoid using <b>DeepMimic(PPO)</b> in <b>Unity3D(ML-Agents)</b>.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org41d45f3" class="outline-4">
+<h4 id="org41d45f3">Non-Holonomic Kinodynamic Motion Planning [May. 2017]</h4>
+<div class="outline-text-4" id="text-org41d45f3">
+<p class="verse">
+Using optimal control as a fast inverse dynamic model, a general sample-based motion planning algorithm was proposed for complex non-holonomic agents in kinodynamic spaces.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgb5133fc" class="outline-4">
+<h4 id="orgb5133fc"><a href="http://www.openthesis.org/document/view/603263_0.pdf">Nonlinear Control of a Ballbot</a></h4>
+<div class="outline-text-4" id="text-orgb5133fc">
+<p class="verse">
+Online motion and path planning of the highly nonlinear Rezero, using RRT and optimal control.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgd377d35" class="outline-4">
+<h4 id="orgd377d35"><a href="https://www.slideshare.net/slideshow/embed_code/key/wyRKZKDDHxy1AF">Unsupervised Object Localization</a> [Sep. 2018]</h4>
+<div class="outline-text-4" id="text-orgd377d35">
+<p class="verse">
+Extracting the deep-seated spatial information of classification networks by Guided Back-propagating most affecting neurons to the image, enables us to spot image parts corresponding to the object.<br />
+</p>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga804fbb" class="outline-2">
+<h2 id="orga804fbb">Experince</h2>
+<div class="outline-text-2" id="text-orga804fbb">
+</div>
+<div id="outline-container-org0ce8e34" class="outline-4">
+<h4 id="org0ce8e34">Team Leader at <a href="https://cafebazaar.ir/?l=en">CafeBazaar</a> [Sep. 2019 _Ongoing_]</h4>
+<div class="outline-text-4" id="text-org0ce8e34">
+<p class="verse">
+I am currently at <a href="https://balad.ir/about">Balad</a> , the biggest domestic map and navigation application of Iran, a product of the Iranian tech giant, CafeBazaar.<br />
+<br />
+- Technical Leadership and Product Management of Data Infrastructure, a team of 7, responsible for attending to the data science needs of the map tribe (Sep. 2019 - Apr. 2020).<br />
+<br />
+- Team Leader of Augmented Reality team (Sep. 2019 - Ongoing).<br />
+<br />
+- Team Leader of ETA&amp;Traffic, a team of Software Engineers and Data Scientists, concerned with ETA and Traffic (-__-) (Apr. 2020 - Ongoing).<br />
+<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org8c59917" class="outline-4">
+<h4 id="org8c59917">Senior Data Scientist at CafeBazaar [Oct. 2018 to Sep. 2019]</h4>
+<div class="outline-text-4" id="text-org8c59917">
+<p class="verse">
+I worked at Navigation team at Balad on route planning, traffic prediction, and ETA using data-driven methods. Moreover, as a computer vision scientist I was concerned with information extraction from street and aerial imagery.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orge249e35" class="outline-4">
+<h4 id="orge249e35">Senior Backend Developer at <a href="https://tapsi.ir/">TAPSI</a> [May. to Oct. 2018]</h4>
+<div class="outline-text-4" id="text-orge249e35">
+<p class="verse">
+I was a member of the Dispatch/Pricing team at TAPSI, which is somehow the heart of any ride-hailing platform. Whenever a ride request is submitted, we are the invisible hands behind, connecting riders and drivers.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org691092c" class="outline-4">
+<h4 id="org691092c">Data Scientist at TAPSI [Feb. to May. 2018]</h4>
+<div class="outline-text-4" id="text-org691092c">
+<p class="verse">
+Among the biggest Iranian tech companies, TAPSI is a ride-hailing platform with millions of monthly active users.<br />
+</p>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-org555bf61" class="outline-2">
+<h2 id="org555bf61">Projects</h2>
+<div class="outline-text-2" id="text-org555bf61">
+</div>
+<div id="outline-container-org9ca7178" class="outline-4">
+<h4 id="org9ca7178">Redesigning Balad&rsquo;s Traffic Infrastructure [Jun. to Oct. 2020]</h4>
+<div class="outline-text-4" id="text-org9ca7178">
+<p class="verse">
+Live Traffic: Cutting down on computational resources and improvement on LiveTraffic accuracy by a huge factor. We use Apache Kafka and Flink for serving and streaming the location data.<br />
+Typical Traffic: A more sluggish inference for traffic inferred from historical data.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org5f3fadf" class="outline-4">
+<h4 id="org5f3fadf">AR Navigation [Jul. 2019 to Aug. 2020]</h4>
+<div class="outline-text-4" id="text-org5f3fadf">
+<p class="verse">
+Providing users with an Augmented Reality driven experience for navigation.<br />
+The team tackled the problem of finding the near-optimal vanishing point for a sequence of input images and depiction of graphical instructions accordingly, from OpenGL scratch. For now, the system is embedded in Balad running on Android phones.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgd77fd4e" class="outline-4">
+<h4 id="orgd77fd4e"><a href="https://github.com/MahanFathi/OBJET">OBJET: A Computer Vision Graphical Sandbox</a> [Feb. to Mar. 2020]</h4>
+<div class="outline-text-4" id="text-orgd77fd4e">
+<p class="verse">
+OBJET, is a graphical environment, developed in C++/OpenGL and accessible in Python via SWIG, to cater to the data needs of one willing to conduct research on computer vision in such domains. Load your own objects in a room, take a snapshot of the viewport, from the viewpoint of the customizable camera, and load it to python. This gives you the ability to create data on-the-fly, in your python data loader.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgaf37a16" class="outline-4">
+<h4 id="orgaf37a16">Road Extraction from Satellite Imagery [Jan. to Mar. 2020]</h4>
+<div class="outline-text-4" id="text-orgaf37a16">
+<p class="verse">
+Extraction of the graph of roads from aerial images, via image segmentation and a shitload of post-processing.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgf0334c7" class="outline-4">
+<h4 id="orgf0334c7">Automated Face, Plate Number, Etc. Censorship of Balad’s Street Imagery via YOLOv3 [Nov. 2019 to Jan. 2020]</h4>
+<div class="outline-text-4" id="text-orgf0334c7">
+<p class="verse">
+Significantly enhanced the former RCNN driven approach in terms of performance.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org6b0e9b8" class="outline-4">
+<h4 id="org6b0e9b8">Object Extraction from Satellite Imagery [Dec. 2019 to Jan. 2020]</h4>
+<div class="outline-text-4" id="text-org6b0e9b8">
+<p>
+Extraction of building boundaries, parks, bridges, crosswalks, parking lots, etc. from satellite imagery.
+</p>
+</div>
+</div>
+<div id="outline-container-org334e9bc" class="outline-4">
+<h4 id="org334e9bc">Automated Tagging of Crowd-sourced Images [Nov. to Dec. 2019]</h4>
+<div class="outline-text-4" id="text-org334e9bc">
+<p class="verse">
+A service responsible for automated tagging of crowd-sourced images with labels such as #indoor/outdoor, #menu, #food, #persons<sub>posing</sub>, etc.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgd9c7fed" class="outline-4">
+<h4 id="orgd9c7fed">Extraction of Speed Bumps and Traffic Lights from GPS Logs [Dec. 2019]</h4>
+</div>
+<div id="outline-container-orga5a71f6" class="outline-4">
+<h4 id="orga5a71f6">Live Traffic [Mar. 2019]</h4>
+<div class="outline-text-4" id="text-orga5a71f6">
+<p class="verse">
+Design, implementation, optimization, deployment, maintenance, and storage of real-time user GPS data, single-handedly. The service assigns a traffic metric to map road segments, which are then used by Navigation and ETA services.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgf9fd113" class="outline-4">
+<h4 id="orgf9fd113">Street Imagery Sensitive Content Censorship [Feb. 2019]</h4>
+<div class="outline-text-4" id="text-orgf9fd113">
+<p class="verse">
+YOLOv3 is the core of this fast censor network, responsible for blurring of faces and licence plates in street images.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgf251911" class="outline-4">
+<h4 id="orgf251911">RNN ETA [Feb. to Mar. 2019]</h4>
+<div class="outline-text-4" id="text-orgf251911">
+<p class="verse">
+Reducing Balad&rsquo;s ETA MSE by a factor of 2, using a segment-based LSTM, trained on GPS logs.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orga9c990e" class="outline-4">
+<h4 id="orga9c990e"><a href="https://blog.usejournal.com/collecting-a-nations-points-of-interest-computer-vision-to-the-rescue-41026053bdf6">Detection and Tracking of Points of Interest</a> [Nov. 2018 Jan. 2019]</h4>
+<div class="outline-text-4" id="text-orga9c990e">
+<p class="verse">
+Trained and deployed a Mask-RCNN model for detection of the store signs. Also came up with a novel tracking algorithm to bundle up repeating billboards in subsequent images. Read about it at <a href="https://blog.usejournal.com/collecting-a-nations-points-of-interest-computer-vision-to-the-rescue-41026053bdf6">my personal blog</a> and <a href="http://vrgl.ir/jBg3J">CafeBazaar tech blog</a>.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org0cef36a" class="outline-4">
+<h4 id="org0cef36a"><a href="https://github.com/MahanFathi/end2end-self-driving-car">Learning to Drive in 2 Days</a> [Mar. 2019]</h4>
+<div class="outline-text-4" id="text-org0cef36a">
+<p class="verse">
+Inspired by the work of NVIDIA on DAVE-2, in a team of 6, at the 7th Hackathon of CafeBazaar, we collected just enough data, to train an end-to-end deep conv-net to infer steering angle for each captured image. We then came by a pipeline to connect the center camera to this module at the test time. We were able to achieve the MVP of staying in lanes and avoiding doubled-parked cars. <a href="https://vimeo.com/371631581">Here is a video</a>!<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org10a90db" class="outline-4">
+<h4 id="org10a90db">Location Service Rewrite [Oct. 2018]</h4>
+<div class="outline-text-4" id="text-org10a90db">
+<p class="verse">
+Reducing the response time of TAPSI’s main bottleneck by a crazy factor. We made heavy use of Lua and Redis.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgaa1bc36" class="outline-4">
+<h4 id="orgaa1bc36">Semi-concurrent Dispatch Algorithm [May. 2018 Aug. 2018]</h4>
+<div class="outline-text-4" id="text-orgaa1bc36">
+<p class="verse">
+Implementation of the algorithm as the owner of the project, which resulted in a 3% rise in our finished rides according to RCTs in the first launch. To give you a sense, a percent rise in the ride fulfillment rate in a 6-month long OKR of a team would be an ambitious target.<br />
+</p>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3f4b4b5" class="outline-2">
+<h2 id="org3f4b4b5">Skills</h2>
+<div class="outline-text-2" id="text-org3f4b4b5">
+</div>
+<div id="outline-container-org7d322a1" class="outline-4">
+<h4 id="org7d322a1">Computer Science</h4>
+<div class="outline-text-4" id="text-org7d322a1">
+<p class="verse">
+- Adept at Deep RL, reviewed many state-of-the-art projects<br />
+- Implementation of several projects in computer vision<br />
+- Nonlinear optimization, convex optimization and numerical methods<br />
+- Mostly experienced at motion generation methods<br />
+- Optimal control theory, stochastic control, and robust control<br />
+- Direct Policy Search methods and Sequential Quadratic Programming<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org789dc98" class="outline-4">
+<h4 id="org789dc98">Programming</h4>
+<div class="outline-text-4" id="text-org789dc98">
+<p class="verse">
+- Long programming experience in C++, Python, C, JavaScript, Java, Go, Lisp, Lua, and Unix Evironment<br />
+- TensorFlow, PyTorch/Torch, Caffe, and Keras for Deep Learning Frameworks<br />
+- MuJoCo, Unity, and Bullet for Physics + OpenGL and Blender for Graphics<br />
+- Experienced in C#, ROS, SQL, Redis and Spark<br />
+- Familiarity with a number of nonlinear/convex optimization packages<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgfea1287" class="outline-4">
+<h4 id="orgfea1287">Other</h4>
+<div class="outline-text-4" id="text-orgfea1287">
+<p class="verse">
+- Linux, Docker, Django, Node.js, LaTeX, C, <br />
+&#xa0;&#xa0;Mathematica, Matlab, Simulink, Maple, etc.<br />
+- Can’t live w/o Arch, Emacs, and i3<br />
+- Expert pencil artist and acoustic guitar fanatic<br />
+</p>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgba580ab" class="outline-2">
+<h2 id="orgba580ab">Coursework</h2>
+<div class="outline-text-2" id="text-orgba580ab">
+</div>
+<div id="outline-container-org98ea42e" class="outline-4">
+<h4 id="org98ea42e">Machine Learning</h4>
+<div class="outline-text-4" id="text-org98ea42e">
+<p class="verse">
++ Berkeley&rsquo;s CS294: Deep RL by Sergey Levine<br />
++ David Silver&rsquo;s UCL Course of RL<br />
++ Stanford&rsquo;s CS231n: CNNs for Visual Recognition<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orge764b5b" class="outline-4">
+<h4 id="orge764b5b">Control Theory and Robotics</h4>
+<div class="outline-text-4" id="text-orge764b5b">
+<p class="verse">
++ Underactuated Robotics by Russ Tedrake<br />
++ Berkeley&rsquo;s CS287: Advanced Robotics by Pieter Abbeel<br />
++ Programming for Robotics - ROS (ETH)<br />
++ Artificial Intelligence for Robotics (Udacity)<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org646a74e" class="outline-4">
+<h4 id="org646a74e">Robotics Related Courses from Bachelor</h4>
+<div class="outline-text-4" id="text-org646a74e">
+<p class="verse">
++ Mechanism Design (1st in class 19.8/20.0)<br />
++ Engineering Math (1st in class 19.5/20.0)<br />
++ Programming in C (1st in class 20.0/20.0)<br />
++ Dynamics of Machines (3st in class 19.1/20.0)<br />
++ Dynamics and Modeling (3st in class 19.9/20.0)<br />
+</p>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-org62ae3d3" class="outline-2">
+<h2 id="org62ae3d3">Teaching</h2>
+<div class="outline-text-2" id="text-org62ae3d3">
+</div>
+<div id="outline-container-org0750f00" class="outline-4">
+<h4 id="org0750f00">Mathematica Instructor [Dec. 2016]</h4>
+<div class="outline-text-4" id="text-org0750f00">
+<p class="verse">
+Two-week long, additional program at Sharif University of Technology.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org8dd11e1" class="outline-4">
+<h4 id="org8dd11e1">Physics Olympiad Instructor [Jun. to Nov. 2014]</h4>
+<div class="outline-text-4" id="text-org8dd11e1">
+<p class="verse">
+Introduction to Mechanics, Electrodynamics and Differential Equations.<br />
+</p>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9dbbd38" class="outline-2">
+<h2 id="org9dbbd38">Language</h2>
+<div class="outline-text-2" id="text-org9dbbd38">
+</div>
+<div id="outline-container-org7b39673" class="outline-4">
+<h4 id="org7b39673">Persian(native), English(TOEFL iBT: 110 ), and German(basic)</h4>
+<div class="outline-text-4" id="text-org7b39673">
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2cffb87" class="outline-2">
+<h2 id="org2cffb87">Interests</h2>
+<div class="outline-text-2" id="text-org2cffb87">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>Robotics and Character Animation</b></th>
+<th scope="col" class="org-left"><b>Machine Learning</b></th>
+<th scope="col" class="org-left"><b>Software Engineering</b></th>
+<th scope="col" class="org-left"><b>Cool Stuff</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Bipedal Locomotion</td>
+<td class="org-left">Reinforcement Learning</td>
+<td class="org-left">Backend Development</td>
+<td class="org-left">Game Development</td>
+</tr>
+
+<tr>
+<td class="org-left">Agile Gaits for Quadrupeds</td>
+<td class="org-left">Optimization Algorithms</td>
+<td class="org-left">Operating Systems &lt;3</td>
+<td class="org-left">Augmented Reality</td>
+</tr>
+
+<tr>
+<td class="org-left">Hierarchical Planning and Control</td>
+<td class="org-left">Computer Vision</td>
+<td class="org-left">Microservices</td>
+<td class="org-left">Virtual Reality</td>
+</tr>
+
+<tr>
+<td class="org-left">Kinematic Character Animation</td>
+<td class="org-left">Computer Graphics</td>
+<td class="org-left">Machine Learning Engineering</td>
+<td class="org-left">Exotic Editors</td>
+</tr>
+
+<tr>
+<td class="org-left">Self-driving cars</td>
+<td class="org-left">Rethinking Neural Nets</td>
+<td class="org-left">C/C++!</td>
+<td class="org-left">Free Software</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Mahan Fathi Mahan Fathi</p>
+<p class="date">Created: 2021-02-19 Fri 15:31</p>
+</div>
+</body>
+</html>

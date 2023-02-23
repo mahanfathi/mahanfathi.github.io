@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-09-15 Tue 13:34 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mahan Fathi</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Mahan Fathi Mahan Fathi" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Mahan Fathi
+<br />
+<span class="subtitle">Notes on iLQR</span>
+</h1>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><a href="mailto:mahan0fathi@gmail.com">mahan0fathi@gmail.com</a></td>
+</tr>
+</tbody>
+</table>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><a href="https://mahanfathi.github.io/"><b>HOME</b></a></td>
+<td class="org-left"><a href="https://github.com/MahanFathi"><b>GitHub</b></a></td>
+<td class="org-left"><a href="https://www.linkedin.com/in/mahanfathi/"><b>LinkedIn</b></a></td>
+<td class="org-left"><a href="http://medium.com/@mahanfathi"><b>Medium</b></a></td>
+<td class="org-left"><a href="https://join.skype.com/invite/i9CZ1i4Jegmb"><b>Skype</b></a></td>
+<td class="org-left"><a href="https://www.instagram.com/8iteme/"><b>Instagram</b></a></td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><img src="../../resources/profile_picture.jpg" alt="profile_picture.jpg" /></td>
+<td class="org-left">I will be starting my master studies at Mila in Computer Science under supervision of Prof. Pierre-Luc Bacon. I received my B.Sc. in Mechanical Engineering at Sharif University of Technology. Leveraging Machine Learning and Optimization to endow robots with an extensive repertoire of skills, and fusing ideas from classical control theory with recent advances in A.I. appeal to me more than anything. To this end, I seek to conduct my research on synthesis of complex motions via model-based optimization and reinforcement learning in general for generation of natural-looking character animation.</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<div id="outline-container-org31e8124" class="outline-2">
+<h2 id="org31e8124">Intro</h2>
+<div class="outline-text-2" id="text-org31e8124">
+<p>
+iLQR is an algorithm for trajectory optimization of nonlinear systems. It is actually quite hard
+and tricky to implement it and by overlooking certain subtle things your well written code compiles
+to a garbage. I advice taking a look at these great resources:
+</p>
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=S5LavPCJ5vw&amp;list=PLwRJQ4m4UJjNBPJdt8WamRAt4XKc639wF&amp;index=5">Pieter Abbeel&rsquo;s CS287</a></li>
+<li><a href="https://www.youtube.com/watch?v=mZtlW_xtarI&amp;list=PLkFD6_40KJIwTmSbCv9OVJB3YaO4sFwkX&amp;index=3">Sergey Levine&rsquo;s CS285</a></li>
+<li><a href="https://homes.cs.washington.edu/~todorov/papers/TassaIROS12.pdf">And the paper itself</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org44d7edb" class="outline-2">
+<h2 id="org44d7edb">Problem Setting</h2>
+<div class="outline-text-2" id="text-org44d7edb">
+</div>
+<div id="outline-container-org5b1b5f6" class="outline-3">
+<h3 id="org5b1b5f6">Initialization and Notation</h3>
+<div class="outline-text-3" id="text-org5b1b5f6">
+<p>
+iLQR is firstly initialized with some dynamically feasible trajectory &#x2013; this could be merely
+a roll-out of dynamics with zero control inputs, however, good initialization makes a difference
+in the performance of the algorithm.
+</p>
+
+
+<div class="figure">
+<p><img src="trajectory.png" alt="trajectory.png" />
+</p>
+</div>
+
+<p>
+Here \(n\) denotes the the number of steps remaining in the optimization, i.e. the optimization horizon.
+So the next state after \(x_n^*\) is \(x_{n-1}^*\), by taking action \(u_n^*\). The first state, \(x_N^*\) is always
+given by the problem settings. Also note that \((x_n^*, u_n^*)\) trajectory is a valid sequence, in that they
+come from direct execution of actions and collection of states, on the model.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org64b0639" class="outline-3">
+<h3 id="org64b0639">Optimization Objective and Optimization Steps</h3>
+<div class="outline-text-3" id="text-org64b0639">
+<p>
+The ultimate goal is to solve for the following trajectory optimization problem:
+</p>
+
+\begin{equation}
+\min_{u_n ... u_1} \quad J_0(x_0) + \sum_{i=N}^{1} {g(x_i, u_i)} \\
+\textrm{s.t.} \quad  x_{i-1} = f(x_i, u_i) \\
+\quad  x_{N} = x_{start}
+\end{equation}
+
+<p>
+\(J_i^*(x)\) is the optimal cost-to-go for the remaining \(i\) steps. The final cost-to-go, i.e. \(J_0\) is given by the
+problem setting and \(J_0(x) = J_0^*(x)\), since there are no actions left to &ldquo;optimize.&rdquo; The above-mentioned optimization
+problem can be solved using many tools, including dynamic programming, e.g. value iteration etc, which solve the
+following at each step:
+</p>
+
+\begin{equation}
+\label{eq:dp}
+\min_{u_n} \quad J_{n-1}^*(f(x_n, u_n)) + g(x_n, u_n)
+\end{equation}
+
+<p>
+However, solving for an arbitrary optimization problem at each step is computationally costly and unmanageable.
+The thing about LQR that makes it so popular is that it makes dynamic programming recursion painless, by applying
+the same analytical update at each step. This update is valid for a system with linear transition model and linear-quadratic
+step-cost:
+</p>
+
+\begin{equation*}
+x_{i-1} = c + A x_i + B u_i \\
+g(x, u) = x^T Q x + q x + u^T R u + r u
+\end{equation*}
+
+<p>
+Eventually, deploying LQ simplifications in equation (\ref{eq:dp}) yields:
+</p>
+
+\begin{equation}
+\label{eq:lqr_step}
+\min_{u_n} \quad    (x_{n-1}^T V_{n-1} x_{n-1} + v_{n-1} x_{n-1}) +
+                    (x_n^T Q x_n + q x_n) +
+                    (u_n^T R u_n + r u_n) \\
+\text{where:} \quad x_{n-1} = c + A x_n + B u_n
+\end{equation}
+
+<p>
+It is assumed, correctly, that the optimal cost to go maintains an LQ shape throughout the optimization &#x2013;
+we also need to remember to make sure of that. By setting the gradient of \(u_n\) to zero we can solve for
+the optimal control input:
+</p>
+
+\begin{equation}
+  \nabla_u [...] = 2 (c + A x + B u)^T V B + v B + 2 u^T R + r = 0 \\
+  \implies \nabla_u^T [...] = 2 B^T V A x + (2 B^T V B + 2 R) u + 2 B^T V c + B^T v^T + r^T = 0
+\end{equation}
+
+<p>
+So the control input is feedback-ish function of \(x_n\):
+</p>
+
+\begin{equation}
+\label{eq:feedback}
+  u_n = -(2 B^T V_{n-1} B + 2 R)^{-1} 2 B^T V_{n-1} A x_n + -(2 B^T V_{n-1} B + 2 R)^{-1} (B^T v^T + 2 B^T V c + r^T) \\
+  u_n = K_n x_n + k_n
+\end{equation}
+
+<p>
+By substituting equation (\ref{eq:feedback}) into (\ref{eq:lqr_step}) we can get J<sub>n</sub><sup>*</sup>, which is going to be
+in an LQ form, with a constant part which is not going to affect out lives in any way:
+</p>
+
+\begin{equation}
+J_n^*(x) = x^T V_n x + v_n x + const\\
+V_n = (A + B K_n)^T V_{n-1} (A + B K_n) + Q + K^T R K \\
+v_n = 2 (k_n^T B^T + c^T) V_{n-1} (A + B K_n) + v_{n-1} (A + B K_n) + q + 2 k_n^T R K_n
+\end{equation}
+
+<p>
+One minor thing we have to bear in mind is that, during the algebraic steps of we assume \(V = (V + V^T) / 2\)
+or in other words, \(V\) is symmetric.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgc7158fb" class="outline-2">
+<h2 id="orgc7158fb">Nonlinearities</h2>
+<div class="outline-text-2" id="text-orgc7158fb">
+<p>
+The problem however is, that neither a linear model nor a linear-quadratic step-cost function is associated with
+most of interesting problems. To deal with this, the idea is to solve each optimization step for the vicinity of
+a valid \((x_n, u_n, x_{n-1})\) tuple and try to improve the resulted trajectory each iteration at a time.
+</p>
+</div>
+
+
+<div id="outline-container-org039de5b" class="outline-3">
+<h3 id="org039de5b">Linearization of Dynamics</h3>
+<div class="outline-text-3" id="text-org039de5b">
+<p>
+To be able to work with linear dynamics, the equations of motion, i.e. \(x_{n-1}^* = f(x_n^*, u_n^*)\) need to
+be approximated by a first-order Taylor expansion:
+</p>
+
+\begin{equation}
+  x_{n-1} \approx x_{n-1}^* + A (x_n - x_n^*) + B (u_n - u_n^*)
+\end{equation}
+
+<p>
+Subtracting \(x_n^*\) yields:
+</p>
+
+\begin{equation}
+  x_{n-1} - x_n^* \approx (x_{n-1}^* - x_n^*) + A (x_n - x_n^*) + B (u_n - u_n^*)
+\end{equation}
+
+<p>
+By reparametrizing \(x\) and \(u\) respectively to \(x - x_n^*\) and \(u - u_n^*\), an affine system is reached:
+</p>
+
+\begin{equation}
+  \zeta_{n-1} \approx (x_{n-1}^* - x_n^*) + A \zeta_n + B \nu_n \\
+  \text{where:} \quad \zeta_m = x_m - x_n^*, \nu_m = u_m - u_n^*
+\end{equation}
+
+<p>
+The \((x_{n-1}^* - x_n^*)\) term is merely a constant, e.g. \(c\), and the affine system could be further simplified into:
+</p>
+
+\begin{equation*}
+  \zeta_{n-1} \approx c + A \zeta_n + B \nu_n \\
+\end{equation*}
+
+\begin{equation}
+  \implies z_{n-1}
+  =
+    \begin{bmatrix}
+      \zeta_{n-1} \\
+      1
+    \end{bmatrix}
+  =
+    \begin{bmatrix}
+      A & c \\
+      0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+      \zeta_n \\
+      1
+    \end{bmatrix}
+  +
+    \begin{bmatrix}
+      B \\
+      0
+    \end{bmatrix}
+    \nu_n
+  =
+  A^\prime z_n + B^\prime \nu_n
+\end{equation}
+
+\begin{equation*}
+  z_{n-1} = A^\prime z_n + B^\prime \nu_n
+\end{equation*}
+
+<p>
+However, the optimal solution for a single LQR step is already calculated <a href="#org64b0639">here</a> and we don&rsquo;t need this last step.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org3e7e546" class="outline-3">
+<h3 id="org3e7e546">Differentiation of \(\overrightarrow{F} = M \overrightarrow{a}\)</h3>
+<div class="outline-text-3" id="text-org3e7e546">
+<p>
+To get the \(A\) and \(B\) matrices we need to differentiate the dynamics of equations. Adhering to MuJoCo notation,
+\(\overrightarrow{q}\), \(\overrightarrow{q_{vel}}\), and \(\overrightarrow{q_{acc}}\) respectively denote the joint positions,
+velocities, and accelerations. The following equation describes the evolution of the state by Euler integration over a
+timestemp:
+</p>
+
+\begin{equation}
+    \begin{bmatrix}
+      q_{n-1} \\
+      qvel_{n-1}
+    \end{bmatrix}
+  =
+    \begin{bmatrix}
+      q_{n} \\
+      qvel_{n}
+    \end{bmatrix}
+  +
+    \begin{bmatrix}
+      q_{n} \\
+      qvel_{n}
+    \end{bmatrix}
+  * \Delta t
+\end{equation}
+
+<p>
+Differentiation in MuJoCo, for now, is possible only through finite difference. To see how this is exactly carried out,
+an official code sample can be found <a href="http://www.mujoco.org/book/source/derivative.cpp">here</a>. After finding the primitive gradients, i.e. \(\frac{\partial qacc}{\partial q}\),
+\(\frac{\partial qacc}{\partial qvel}\), and \(\frac{\partial qacc}{\partial ctrl}\) you can construct the \(A\) and \(B\) matrices:
+</p>
+
+\begin{equation}
+  A_{2nv, 2nv} =
+    \begin{bmatrix}
+      I_{nv, nv} & I_{nv, nv} * \Delta t \\
+      \frac{\partial qacc}{\partial q} * \Delta t &
+      I_{nv, nv} + \frac{\partial qacc}{\partial qvel} * \Delta t
+    \end{bmatrix}
+  ,
+  B_{2nv, nu} =
+    \begin{bmatrix}
+      0_{nv, nu} \\
+      \frac{\partial qacc}{\partial ctrl} * \Delta t
+    \end{bmatrix}
+\end{equation}
+</div>
+</div>
+
+<div id="outline-container-org4fa5611" class="outline-3">
+<h3 id="org4fa5611">Approximation of Cost</h3>
+<div class="outline-text-3" id="text-org4fa5611">
+<p>
+For the cost function \(g\) we can follow the same drill, with the only difference that this time we are going to calculate
+the Hessian too, or .. don&rsquo;t we? Note that we now ought to work with \(z\) and \(\nu\) instead of \(x\) and \(u\), which are only
+an offset apart. Assuming that \(g(x, u)\) function is implemented and we have access to its gradients with respect to \(x\)
+and \(u\) &#x2013; maybe via finite difference method or auto-differentiation, the gradients with respect to \(z\) and \(\nu\) are also
+quite easy to reach:
+</p>
+
+\begin{equation}
+  \frac{\partial g}{\partial z} =
+    \begin{bmatrix}
+      \frac{\partial g}{\partial x} \\
+      0
+    \end{bmatrix}
+, \quad
+  \frac{\partial g}{\partial \nu} = \frac{\partial g}{\partial u}
+  \\
+\end{equation}
+
+<p>
+To get the Hessians, we also don&rsquo;t going to bother us too much and we simply use the Jacobian approximation, i.e.
+\(H \approx J^T J\). Find a descent explanation <a href="https://math.stackexchange.com/questions/2349026/why-is-the-approximation-of-hessian-jtj-reasonable">here</a>.
+</p>
+
+\begin{equation}
+  \frac{\partial^2 g}{\partial z^2} \approx (\frac{\partial g}{\partial z})^T (\frac{\partial g}{\partial z}) \\
+  \frac{\partial^2 g}{\partial \nu^2} \approx (\frac{\partial g}{\partial \nu})^T (\frac{\partial g}{\partial \nu})
+\end{equation}
+
+<p>
+We also don&rsquo;t need to worry about \(V\) and \(v\), since differentiation zeros out the unwanted terms.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Mahan Fathi Mahan Fathi</p>
+<p class="date">Created: 2020-09-15 Tue 13:34</p>
+</div>
+</body>
+</html>

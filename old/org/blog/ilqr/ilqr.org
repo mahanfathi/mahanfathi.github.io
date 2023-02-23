@@ -1,0 +1,286 @@
+#+AUTHOR:    Mahan Fathi
+#+EMAIL:     mahan0fathi@gmail.com
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [american]
+
+# Setup tikz package for both LaTeX and HTML export:
+#+LATEX_HEADER: \usepackage{tikz}
+#+PROPERTY: header-args:latex+ :packages '(("" "tikz"))
+#+PROPERTY: header-args:latex+ :imagemagick (by-backend (latex nil) (t "yes"))
+#+PROPERTY: header-args:latex+ :exports results :fit yes
+
+* Intro
+iLQR is an algorithm for trajectory optimization of nonlinear systems. It is actually quite hard
+and tricky to implement it and by overlooking certain subtle things your well written code compiles
+to a garbage. I advice taking a look at these great resources:
+- [[https://www.youtube.com/watch?v=S5LavPCJ5vw&list=PLwRJQ4m4UJjNBPJdt8WamRAt4XKc639wF&index=5][Pieter Abbeel's CS287]]
+- [[https://www.youtube.com/watch?v=mZtlW_xtarI&list=PLkFD6_40KJIwTmSbCv9OVJB3YaO4sFwkX&index=3][Sergey Levine's CS285]]
+- [[https://homes.cs.washington.edu/~todorov/papers/TassaIROS12.pdf][And the paper itself]]
+
+* Problem Setting
+** Initialization and Notation
+
+iLQR is firstly initialized with some dynamically feasible trajectory -- this could be merely
+a roll-out of dynamics with zero control inputs, however, good initialization makes a difference
+in the performance of the algorithm.
+
+#+name: trajectory
+#+header: :fit yes :iminoptions -density 200 -resample 80x80
+#+header: :file (by-backend (latex "trajectory.tikz") (t "trajectory.png"))
+#+begin_src latex :results raw file
+\begin{tikzpicture}
+
+\node (n) at (0, 0) {\LARGE $x_n^*$};
+\node (n-1) at (4, 1) {\LARGE $x_{n-1}^*$};
+\node (n-2) at (8, 0) {\LARGE $x_{n-2}^*$};
+\node (dots_-) at (11, 0.5) {};
+\node (dots) at (12, 0.5) {\LARGE .  .  .};
+\node (dots_+) at (13, 0.5) {};
+\node (2) at (16, 1) {\LARGE $x_2^*$};
+\node (1) at (20, 0) {\LARGE $x_1^*$};
+\node (0) at (24, 1) {\LARGE $x_0^*$};
+
+\node (un) at (2, 0.5) [anchor=north] {\LARGE $u_n^*$};
+\node (un-1) at (6, 0.5) [anchor=south] {\LARGE $u_{n-1}^*$};
+\node (u2) at (18, 0.5) [anchor=north] {\LARGE $u_2^*$};
+\node (u1) at (22, 0.5) [anchor=south] {\LARGE $u_1^*$};
+
+\draw[->]
+  (n) edge (n-1) (n-1) edge (n-2) (n-2) edge (dots_-)
+  (dots_+) edge (2) (2) edge (1) (1) edge (0)
+;
+
+\end{tikzpicture}
+#+end_src
+
+#+attr_latex: :float nil :width ""
+#+results: trajectory
+[[file:trajectory.png]]
+
+Here $n$ denotes the the number of steps remaining in the optimization, i.e. the optimization horizon.
+So the next state after $x_n^*$ is $x_{n-1}^*$, by taking action $u_n^*$. The first state, $x_N^*$ is always
+given by the problem settings. Also note that $(x_n^*, u_n^*)$ trajectory is a valid sequence, in that they
+come from direct execution of actions and collection of states, on the model.
+
+
+** Optimization Objective and Optimization Steps
+
+The ultimate goal is to solve for the following trajectory optimization problem:
+
+\begin{equation}
+\min_{u_n ... u_1} \quad J_0(x_0) + \sum_{i=N}^{1} {g(x_i, u_i)} \\
+\textrm{s.t.} \quad  x_{i-1} = f(x_i, u_i) \\
+\quad  x_{N} = x_{start}
+\end{equation}
+
+$J_i^*(x)$ is the optimal cost-to-go for the remaining $i$ steps. The final cost-to-go, i.e. $J_0$ is given by the
+problem setting and $J_0(x) = J_0^*(x)$, since there are no actions left to "optimize." The above-mentioned optimization
+problem can be solved using many tools, including dynamic programming, e.g. value iteration etc, which solve the
+following at each step:
+
+\begin{equation}
+\label{eq:dp}
+\min_{u_n} \quad J_{n-1}^*(f(x_n, u_n)) + g(x_n, u_n)
+\end{equation}
+
+However, solving for an arbitrary optimization problem at each step is computationally costly and unmanageable.
+The thing about LQR that makes it so popular is that it makes dynamic programming recursion painless, by applying
+the same analytical update at each step. This update is valid for a system with linear transition model and linear-quadratic
+step-cost:
+
+\begin{equation*}
+x_{i-1} = c + A x_i + B u_i \\
+g(x, u) = x^T Q x + q x + u^T R u + r u
+\end{equation*}
+
+Eventually, deploying LQ simplifications in equation (\ref{eq:dp}) yields:
+
+\begin{equation}
+\label{eq:lqr_step}
+\min_{u_n} \quad    (x_{n-1}^T V_{n-1} x_{n-1} + v_{n-1} x_{n-1}) +
+                    (x_n^T Q x_n + q x_n) +
+                    (u_n^T R u_n + r u_n) \\
+\text{where:} \quad x_{n-1} = c + A x_n + B u_n
+\end{equation}
+
+It is assumed, correctly, that the optimal cost to go maintains an LQ shape throughout the optimization --
+we also need to remember to make sure of that. By setting the gradient of $u_n$ to zero we can solve for
+the optimal control input:
+
+\begin{equation}
+  \nabla_u [...] = 2 (c + A x + B u)^T V B + v B + 2 u^T R + r = 0 \\
+  \implies \nabla_u^T [...] = 2 B^T V A x + (2 B^T V B + 2 R) u + 2 B^T V c + B^T v^T + r^T = 0
+\end{equation}
+
+So the control input is feedback-ish function of $x_n$:
+
+\begin{equation}
+\label{eq:feedback}
+  u_n = -(2 B^T V_{n-1} B + 2 R)^{-1} 2 B^T V_{n-1} A x_n + -(2 B^T V_{n-1} B + 2 R)^{-1} (B^T v^T + 2 B^T V c + r^T) \\
+  u_n = K_n x_n + k_n
+\end{equation}
+
+By substituting equation (\ref{eq:feedback}) into (\ref{eq:lqr_step}) we can get J_n^*, which is going to be
+in an LQ form, with a constant part which is not going to affect out lives in any way:
+
+\begin{equation}
+J_n^*(x) = x^T V_n x + v_n x + const\\
+V_n = (A + B K_n)^T V_{n-1} (A + B K_n) + Q + K^T R K \\
+v_n = 2 (k_n^T B^T + c^T) V_{n-1} (A + B K_n) + v_{n-1} (A + B K_n) + q + 2 k_n^T R K_n
+\end{equation}
+
+One minor thing we have to bear in mind is that, during the algebraic steps of we assume $V = (V + V^T) / 2$
+or in other words, $V$ is symmetric.
+
+
+* Nonlinearities
+
+The problem however is, that neither a linear model nor a linear-quadratic step-cost function is associated with
+most of interesting problems. To deal with this, the idea is to solve each optimization step for the vicinity of
+a valid $(x_n, u_n, x_{n-1})$ tuple and try to improve the resulted trajectory each iteration at a time.
+
+
+** Linearization of Dynamics
+
+To be able to work with linear dynamics, the equations of motion, i.e. $x_{n-1}^* = f(x_n^*, u_n^*)$ need to
+be approximated by a first-order Taylor expansion:
+
+\begin{equation}
+  x_{n-1} \approx x_{n-1}^* + A (x_n - x_n^*) + B (u_n - u_n^*)
+\end{equation}
+
+Subtracting $x_n^*$ yields:
+
+\begin{equation}
+  x_{n-1} - x_n^* \approx (x_{n-1}^* - x_n^*) + A (x_n - x_n^*) + B (u_n - u_n^*)
+\end{equation}
+
+By reparametrizing $x$ and $u$ respectively to $x - x_n^*$ and $u - u_n^*$, an affine system is reached:
+
+\begin{equation}
+  \zeta_{n-1} \approx (x_{n-1}^* - x_n^*) + A \zeta_n + B \nu_n \\
+  \text{where:} \quad \zeta_m = x_m - x_n^*, \nu_m = u_m - u_n^*
+\end{equation}
+
+The $(x_{n-1}^* - x_n^*)$ term is merely a constant, e.g. $c$, and the affine system could be further simplified into:
+
+\begin{equation*}
+  \zeta_{n-1} \approx c + A \zeta_n + B \nu_n \\
+\end{equation*}
+
+\begin{equation}
+  \implies z_{n-1}
+  =
+    \begin{bmatrix}
+      \zeta_{n-1} \\
+      1
+    \end{bmatrix}
+  =
+    \begin{bmatrix}
+      A & c \\
+      0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+      \zeta_n \\
+      1
+    \end{bmatrix}
+  +
+    \begin{bmatrix}
+      B \\
+      0
+    \end{bmatrix}
+    \nu_n
+  =
+  A^\prime z_n + B^\prime \nu_n
+\end{equation}
+
+\begin{equation*}
+  z_{n-1} = A^\prime z_n + B^\prime \nu_n
+\end{equation*}
+
+However, the optimal solution for a single LQR step is already calculated [[*Optimization Objective and Optimization Steps][here]] and we don't need this last step.
+
+
+** Differentiation of $\overrightarrow{F} = M \overrightarrow{a}$
+
+To get the $A$ and $B$ matrices we need to differentiate the dynamics of equations. Adhering to MuJoCo notation,
+$\overrightarrow{q}$, $\overrightarrow{q_{vel}}$, and $\overrightarrow{q_{acc}}$ respectively denote the joint positions,
+velocities, and accelerations. The following equation describes the evolution of the state by Euler integration over a
+timestemp:
+
+\begin{equation}
+    \begin{bmatrix}
+      q_{n-1} \\
+      qvel_{n-1}
+    \end{bmatrix}
+  =
+    \begin{bmatrix}
+      q_{n} \\
+      qvel_{n}
+    \end{bmatrix}
+  +
+    \begin{bmatrix}
+      q_{n} \\
+      qvel_{n}
+    \end{bmatrix}
+  * \Delta t
+\end{equation}
+
+Differentiation in MuJoCo, for now, is possible only through finite difference. To see how this is exactly carried out,
+an official code sample can be found [[http://www.mujoco.org/book/source/derivative.cpp][here]]. After finding the primitive gradients, i.e. $\frac{\partial qacc}{\partial q}$,
+$\frac{\partial qacc}{\partial qvel}$, and $\frac{\partial qacc}{\partial ctrl}$ you can construct the $A$ and $B$ matrices:
+
+\begin{equation}
+  A_{2nv, 2nv} =
+    \begin{bmatrix}
+      I_{nv, nv} & I_{nv, nv} * \Delta t \\
+      \frac{\partial qacc}{\partial q} * \Delta t &
+      I_{nv, nv} + \frac{\partial qacc}{\partial qvel} * \Delta t
+    \end{bmatrix}
+  ,
+  B_{2nv, nu} =
+    \begin{bmatrix}
+      0_{nv, nu} \\
+      \frac{\partial qacc}{\partial ctrl} * \Delta t
+    \end{bmatrix}
+\end{equation}
+
+** Approximation of Cost
+
+For the cost function $g$ we can follow the same drill, with the only difference that this time we are going to calculate
+the Hessian too, or .. don't we? Note that we now ought to work with $z$ and $\nu$ instead of $x$ and $u$, which are only
+an offset apart. Assuming that $g(x, u)$ function is implemented and we have access to its gradients with respect to $x$
+and $u$ -- maybe via finite difference method or auto-differentiation, the gradients with respect to $z$ and $\nu$ are also
+quite easy to reach:
+
+\begin{equation}
+  \frac{\partial g}{\partial z} =
+    \begin{bmatrix}
+      \frac{\partial g}{\partial x} \\
+      0
+    \end{bmatrix}
+, \quad
+  \frac{\partial g}{\partial \nu} = \frac{\partial g}{\partial u}
+  \\
+\end{equation}
+
+To get the Hessians, we also don't going to bother us too much and we simply use the Jacobian approximation, i.e.
+$H \approx J^T J$. Find a descent explanation [[https://math.stackexchange.com/questions/2349026/why-is-the-approximation-of-hessian-jtj-reasonable][here]].
+
+\begin{equation}
+  \frac{\partial^2 g}{\partial z^2} \approx (\frac{\partial g}{\partial z})^T (\frac{\partial g}{\partial z}) \\
+  \frac{\partial^2 g}{\partial \nu^2} \approx (\frac{\partial g}{\partial \nu})^T (\frac{\partial g}{\partial \nu})
+\end{equation}
+
+We also don't need to worry about $V$ and $v$, since differentiation zeros out the unwanted terms.
+
+
+* setup :noexport:
+
+#+name: setup
+#+begin_src emacs-lisp :results silent :exports none
+  (defmacro by-backend (&rest body)
+    `(case (if (boundp 'backend) (org-export-backend-name backend) nil) ,@body))
+#+end_src
+# for setting up eval: (org-sbe "setup")
