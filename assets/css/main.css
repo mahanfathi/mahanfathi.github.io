@@ -1,11 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
-@import url("fontawesome-all.min.css");
 
 /*
 	Astral by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+
+.nametitle {
+    display: flex;
+    justify-content: space-between; /* Pushes items to the edges */
+    width: 100%; /* Ensures container spans full width */
+    align-items: center;
+}
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -24,6 +30,7 @@ section, summary, time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;}
+
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
