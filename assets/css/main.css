@@ -1786,7 +1786,7 @@ input, select, textarea {
 			position: relative;
 			display: inline-block;
 			color: #ffffff;
-			width: 0.95em;  /* iPhone screen */
+			width: 0.9em;  /* iPhone screen */
 			height: 1em;
 			line-height: 0.9em;
 			font-size: 2.5em;
