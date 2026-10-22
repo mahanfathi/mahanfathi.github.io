@@ -1,176 +1,314 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Mahan Fathi</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css"/>
-		<link rel="stylesheet" href="assets/css/onclick_style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <!-- <script src="https://kit.fontawesome.com/29e5b52c70.js" crossorigin="anonymous"></script> -->
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mahan Fathi</title>
+  <meta name="description" content="Mahan Fathi is a research scientist at NVIDIA. Previously Google DeepMind, Google Brain and Mila.">
+  <meta name="author" content="Mahan Fathi">
+  <link rel="canonical" href="https://mahanfathi.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mahan Fathi">
+  <meta property="og:description" content="Research scientist at NVIDIA. Previously Google DeepMind, Google Brain and Mila.">
+  <meta property="og:url" content="https://mahanfathi.github.io/">
+  <meta property="og:image" content="https://mahanfathi.github.io/images/portrait.jpg">
+  <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#102542" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-		<!-- Wrapper-->
-			<div id="wrapper">
+  <script>
+    // Pick the sheet before first paint so a saved choice never flashes.
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var t = localStorage.getItem('sheet');
+        if (t === 'light' || t === 'dark') d.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<a href="#" class="icon solid fa-home"><span>Home</span></a>
-						<a href="#aboutme" class="icon solid fa-info"><span>About me</span></a>
-						<a href="https://scholar.google.com/citations?hl=en&user=qQkPvIkAAAAJ" class="icon solid fa-book-open-reader" target="_blank"><span>Scholar</span></a>
-						<a href="https://www.linkedin.com/in/mahanfathi/" class="icon brands fa-linkedin" target="_blank"><span>LinkedIn</span></a>
-						<a href="https://github.com/MahanFathi" class="icon brands fa-github" target="_blank"><span>GitHub</span></a>
-						<a href="https://x.com/MahanFathi" class="icon brands fa-twitter" target="_blank"><span>Twitter, not X</span></a>
-						<!-- <a href="mailto:mfathi@nvidia.com" class="icon solid fa-envelope"><span>Email</span></a> -->
-					</nav>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400&text=%D9%85%D8%A7%D9%87%D8%A7%D9%86%20%D9%81%D8%AA%D8%AD%DB%8C&display=swap">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#work">Skip to experience</a>
 
-				<!-- Main -->
-					<div id="main">
+  <div class="sheet">
 
-						<!-- Me -->
-							<article id="home" class="panel intro">
-								<header>
-									    <h1>Mahan Fathi</h1>
-									    <h2>ماهان فتحی</h2>
-                                    <!-- <div class="nametitle">
-									    <h1>Mahan Fathi</h1>
-									    <h2>ماهان فتحی</h2>
-                                    </div> -->
-									<p><i class="fa fa-eye"></i>&nbsp; Researcher at Nvidia</p>
-									<p><i class="fas fa-graduation-cap"></i>&nbsp; MSc Grad from Mila</p>
-									<p><i class="fab fa-google"></i>&nbsp;&nbsp; Ex-Student Researcher at Google DeepMind</p>
-									<p><i class="fa fa-brain"></i>&nbsp; Ex-Student Researcher at Google Brain</p>
-									<p>&nbsp;<a href="mahan-fathi-cv/mahan-fathi-cv.pdf" target="_blank" style="text-decoration: none; color: inherit;" <i class="fas fa-file"></i></a>&nbsp;&nbsp; <a href="mahan-fathi-cv/mahan-fathi-cv.pdf" style="color: pink;" target="_blank">Curriculum Vitae</a></p>
-								</header>
-								<a href="#aboutme" class="jumplink pic">
-									<span class="arrow icon solid fa-chevron-right"><span>More about me...</span></span>
-									<img src="images/me.png" alt="" />
-								</a>
-							</article>
+    <header class="masthead">
+      <a class="mark" href="./" aria-label="Mahan Fathi, home">M<span>·</span>F</a>
+      <nav aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#papers">Papers</a>
+        <a href="mahan-fathi-cv/mahan-fathi-cv.pdf">CV<span class="ext" aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
 
-						<!-- About me -->
-							<article id="aboutme" class="panel">
-								<header>
-									<h2>About me!</h2>
-								</header>
-								<p>Hi there! ( ◕ ◡ ◕)</p>
-								<p>
-									My name is Mahan Fathi (ماهان فتحی). I am an Iranian researcher in the field of Machine Learning and Artificial Intelligence. 
-                                    
-								</p>
+    <main>
 
-								<p>
-                                    I am currently a Research Scientist at <a href="https://www.nvidia.com/en-us/" target="_blank" style="color: pink;">Nvidia</a>, where I collaborate with <a href="https://scholar.google.com/citations?user=zqLpO2QAAAAJ" target="_blank" style="color: pink;">Olivier Delalleau</a> on post-training of Large Language Models. 
-								</p>
+      <section class="intro" aria-labelledby="name">
+        <figure class="portrait">
+          <img src="images/portrait.jpg" width="480" height="600" alt="Mahan Fathi, smiling, in a black t-shirt in front of a leafy tree">
+          <i class="crop tl"></i><i class="crop tr"></i><i class="crop bl"></i><i class="crop br"></i>
+        </figure>
 
-                                <p>
-                                    I did my master's 
-                                    at <a href="https://mila.quebec/en/" target="_blank" style="color: pink;">Mila</a>, advised by <a href="https://pierrelucbacon.com/" target="_blank" style="color: pink;">Pierre-Luc Bacon</a>.
-									During my master's, I had the priviledge to work as a student researcher at <a href="https://research.google/locations/montreal/" target="_blank" style="color: pink;">Google DeepMind Montreal</a>,
-									supervised by <a href="https://goroshin.github.io/" target="_blank" style="color: pink;">Ross Goroshin</a>.
-									I received my bachelor in Mechanical Engineering from Sharif University of Technology in 2017. Towards the end of my studies I got involved in Robotics and Control,
-									and found Deep Reinforcement Learning as a very powerful tool to tackle previously unsolved tasks in locomotion, etc.
-									I then worked for 3 years as a Software Engineer, Data Scientist, and Team Leader in top tech companies of Iran, namely CafeBazaar (user-base of 50 millions) and TAPSI.
-									I also spent a summer as a research assistant at Aalto University under the supervision of
-									<a href="https://scholar.google.com/citations?user=i90uqXUAAAAJ&hl=da" target="_blank" style="color: pink;">Perttu Hämäläinen</a>, looking more into model-based RL.
-								</p>
-                                <p>
-                                    My research interests are pretty broad but I particularly find research that provokes questions to be by far more valuable than work focused on providing answers :)
-                                </p>
+        <div class="intro-head">
+          <div class="names">
+            <h1 id="name">Mahan Fathi</h1>
+            <p class="fa" lang="fa" dir="rtl"><span class="fa-first">ماهان</span> فتحی</p>
+          </div>
+          <p class="strap">Research Scientist at NVIDIA</p>
+        </div>
 
-								<p>
-									For a more detailed summary of my experience please refer to my
-									<a href="mahan-fathi-cv/mahan-fathi-cv.pdf" target="_blank" style="color: pink;">Curriculum Vitae</a>.
-								</p>
+        <div class="bio">
+          <p>I work on post-training large language models at <a href="https://www.nvidia.com/">NVIDIA</a>&thinsp;—&thinsp;reasoning through reinforcement learning with verifiable rewards (RLVR) and reward modeling&thinsp;—&thinsp;supervised by <a href="https://scholar.google.ca/citations?user=zqLpO2QAAAAJ&amp;hl=en">Olivier Delalleau</a>.</p>
+          <p>Before that I did my master’s in computer science at <a href="https://mila.quebec/en/">Mila</a> and Université de Montréal, advised by <a class="nw" href="https://pierrelucbacon.com/">Pierre-Luc Bacon</a>. Along the way I was a student researcher in Montréal under <a href="https://goroshin.github.io/">Ross Goroshin</a>: first at Google Brain, on the MonRL team led by <a href="http://www.marcgbellemare.info/">Marc G. Bellemare</a>, then at Google DeepMind, on large language models and <span class="nw">state-space</span> models.</p>
+          <p>I’m proud of switching gears<span class="aside">&thinsp;—&thinsp;pun intended</span>. Coming from Mechanical Engineering at Sharif University of Technology, I decided not to settle for anything less than following my true passion, robotics; reinforcement learning just happened to be a recently popularized means to that end.</p>
+          <p>All told, I’ve spent 3+ years in academia and industry building large-scale research infrastructure for deep learning, in areas such as large language modeling, reinforcement learning and computer vision; and 3+ years as a software engineer, data scientist and team leader, on things like user-centric ML, high-throughput streaming microservices and image datasets at scale.</p>
+        </div>
 
-								<!-- <section> -->
-								<!-- 	<div class="row"> -->
-								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
-								<!-- 			<a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a> -->
-								<!-- 		</div> -->
-								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
-								<!-- 			<a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a> -->
-								<!-- 		</div> -->
-								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
-								<!-- 			<a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a> -->
-								<!-- 		</div> -->
-								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
-								<!-- 			<a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a> -->
-								<!-- 		</div> -->
-								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
-								<!-- 			<a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a> -->
-								<!-- 		</div> -->
-								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
-								<!-- 			<a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a> -->
-								<!-- 		</div> -->
-								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
-								<!-- 			<a href="#" class="image fit"><img src="images/pic07.jpg" alt=""></a> -->
-								<!-- 		</div> -->
-								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
-								<!-- 			<a href="#" class="image fit"><img src="images/pic08.jpg" alt=""></a> -->
-								<!-- 		</div> -->
-								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
-								<!-- 			<a href="#" class="image fit"><img src="images/pic09.jpg" alt=""></a> -->
-								<!-- 		</div> -->
-								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
-								<!-- 			<a href="#" class="image fit"><img src="images/pic10.jpg" alt=""></a> -->
-								<!-- 		</div> -->
-								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
-								<!-- 			<a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a> -->
-								<!-- 		</div> -->
-								<!-- 		<div class="col-4 col-6-medium col-12-small"> -->
-								<!-- 			<a href="#" class="image fit"><img src="images/pic12.jpg" alt=""></a> -->
-								<!-- 		</div> -->
-								<!-- 	</div> -->
-								<!-- </section> -->
-							</article>
+        <ul class="elsewhere" aria-label="Elsewhere">
+          <li><a href="mailto:mfathi@nvidia.com">Email</a></li>
+          <li><a href="https://scholar.google.com/citations?hl=en&amp;user=qQkPvIkAAAAJ">Scholar</a></li>
+          <li><a href="https://github.com/MahanFathi">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/mahanfathi/">LinkedIn</a></li>
+          <li><a href="https://x.com/MahanFathi">X</a></li>
+          <li><a href="mahan-fathi-cv/mahan-fathi-cv.pdf">CV <span class="ext">(pdf)</span></a></li>
+        </ul>
+      </section>
 
-						<!-- Contact -->
-							<!-- <article id="contact" class="panel"> -->
-							<!-- 	<header> -->
-							<!-- 		<h2>Contact Me</h2> -->
-							<!-- 	</header> -->
-							<!-- 	<form action="#" method="post"> -->
-							<!-- 		<div> -->
-							<!-- 			<div class="row"> -->
-							<!-- 				<div class="col-6 col-12-medium"> -->
-							<!-- 					<input type="text" name="name" placeholder="Name" /> -->
-							<!-- 				</div> -->
-							<!-- 				<div class="col-6 col-12-medium"> -->
-							<!-- 					<input type="text" name="email" placeholder="Email" /> -->
-							<!-- 				</div> -->
-							<!-- 				<div class="col-12"> -->
-							<!-- 					<input type="text" name="subject" placeholder="Subject" /> -->
-							<!-- 				</div> -->
-							<!-- 				<div class="col-12"> -->
-							<!-- 					<textarea name="message" placeholder="Message" rows="6"></textarea> -->
-							<!-- 				</div> -->
-							<!-- 				<div class="col-12"> -->
-							<!-- 					<input type="submit" value="Send Message" /> -->
-							<!-- 				</div> -->
-							<!-- 			</div> -->
-							<!-- 		</div> -->
-							<!-- 	</form> -->
-							<!-- </article> -->
+      <section id="work" class="section" aria-labelledby="work-h">
+        <h2 id="work-h" class="label">Experience</h2>
+        <ol class="entries">
+          <li class="entry">
+            <div class="entry-head">
+              <h3>NVIDIA</h3>
+              <p class="when"><time datetime="2025-01">Jan 2025</time> – Present</p>
+            </div>
+            <p class="role">Research Scientist, Post-training <span class="where">Canada · Remote</span></p>
+            <p class="what">Post-training of large language models: reasoning via RLVR and reward modeling. Supervised by <a href="https://scholar.google.ca/citations?user=zqLpO2QAAAAJ&amp;hl=en">Olivier Delalleau</a>.</p>
+          </li>
+          <li class="entry">
+            <div class="entry-head">
+              <h3>Google DeepMind</h3>
+              <p class="when"><time datetime="2023-04">Apr 2023</time> – <time datetime="2024-01">Jan 2024</time></p>
+            </div>
+            <p class="role">Student Researcher, LLM <span class="where">Montréal, QC</span></p>
+            <p class="what">Large language modeling and state-space models. Supervised by <a href="https://goroshin.github.io/">Ross Goroshin</a>.</p>
+          </li>
+          <li class="entry">
+            <div class="entry-head">
+              <h3>Google Brain</h3>
+              <p class="when"><time datetime="2022-08">Aug 2022</time> – <time datetime="2023-02">Feb 2023</time></p>
+            </div>
+            <p class="role">Student Researcher, Deep RL <span class="where">Montréal, QC</span></p>
+            <p class="what">Where sequence modeling meets offline and online reinforcement learning. A member of the MonRL team led by <a href="http://www.marcgbellemare.info/">Marc G. Bellemare</a>; supervised by <a href="https://goroshin.github.io/">Ross Goroshin</a>.</p>
+          </li>
+          <li class="entry">
+            <div class="entry-head">
+              <h3><a href="https://mila.quebec/en/">Mila</a> <span class="sub">Montreal Institute for Learning Algorithms</span></h3>
+              <p class="when"><time datetime="2021-01">Jan 2021</time> – <time datetime="2024-01">Jan 2024</time></p>
+            </div>
+            <p class="role">MSc Student <span class="where">Montréal, QC</span></p>
+            <p class="what">Advised by <a class="nw" href="https://pierrelucbacon.com/">Pierre-Luc Bacon</a> at Université de Montréal. Sample-efficient reinforcement learning, energy-based policy and imitation networks, and continuous, HiPPO-inspired sequence models in RL and control.</p>
+          </li>
+          <li class="entry">
+            <div class="entry-head">
+              <h3>Polytechnique Montréal</h3>
+              <p class="when"><time datetime="2021-09">Sep 2021</time> – <time datetime="2022-01">Jan 2022</time></p>
+            </div>
+            <p class="role">Teaching Assistant <span class="where">Montréal, QC</span></p>
+            <p class="what">For <a href="https://chandar-lab.github.io/INF8953DE/">INF8953DE</a>, Reinforcement Learning, taught by <a href="http://sarathchandar.in/">Sarath Chandar</a>. Designed the majority of the assignments.</p>
+          </li>
+          <li class="entry">
+            <div class="entry-head">
+              <h3>Aalto University</h3>
+              <p class="when"><time datetime="2019-06">Jun</time> – <time datetime="2019-09">Sep 2019</time></p>
+            </div>
+            <p class="role">Research Assistant <span class="where">Espoo, Finland</span></p>
+            <p class="what">Supervised by <a href="https://users.aalto.fi/~hamalap5/">Perttu Hämäläinen</a>. Built a framework that exposes <i>MuJoCo</i> dynamics steps as differentiable <i>PyTorch</i> operations, and used analytic policy gradients to control systems as complex as <code>Humanoid</code>.</p>
+          </li>
+          <li class="entry">
+            <div class="entry-head">
+              <h3><a href="https://cafebazaar.ir/app?l=en">CafeBazaar</a></h3>
+              <p class="when"><time datetime="2018-10">Oct 2018</time> – <time datetime="2021-01">Jan 2021</time></p>
+            </div>
+            <p class="role">Senior Software Engineer / Data Scientist &amp; Team Lead <span class="where">Tehran, Iran</span></p>
+            <p class="what">At <a href="https://balad.ir/about">Balad</a>, now the biggest domestic map and navigation app in Iran&thinsp;—&thinsp;joined at a user base of 100k, left at ~6M. Technical lead and product manager for Data Infrastructure, a team of 7 data scientists, and for ETA&thinsp;&amp;&thinsp;Traffic, 4 software engineers and 3 data scientists. As a computer vision scientist, worked on <a href="https://medium.com/@MahanFathi/collecting-a-nations-points-of-interest-computer-vision-to-the-rescue-41026053bdf6">extracting information from street</a> and aerial imagery; as a software engineer, built Balad’s first traffic logging and prediction service, solo.</p>
+          </li>
+          <li class="entry">
+            <div class="entry-head">
+              <h3><a href="https://tapsi.ir/">TAPSI</a></h3>
+              <p class="when"><time datetime="2018-02">Feb</time> – <time datetime="2018-10">Oct 2018</time></p>
+            </div>
+            <p class="role">Backend Developer <span class="where">Tehran, Iran</span></p>
+            <p class="what">A ride-hailing platform with millions of monthly active users, among Iran’s biggest tech companies. Raised the finished-rides rate by 3% in a self-directed project, and rewrote many legacy services from scratch, including Location and Dispatch.</p>
+          </li>
+        </ol>
+        <p class="note">Selected; I’m a firm believer in the one-page résumé. The full history is on <a href="https://www.linkedin.com/in/mahanfathi/">LinkedIn</a>.</p>
+      </section>
 
-					</div>
+      <section id="papers" class="section" aria-labelledby="papers-h">
+        <h2 id="papers-h" class="label">Publications</h2>
+        <ol class="papers">
+          <li class="paper">
+            <p class="venue">NeurIPS 2026</p>
+            <h3><a href="https://arxiv.org/abs/2608.29057">Sparse Koopman Autoencoders Identify Local Dynamical Regimes in Multibasin Systems</a></h3>
+            <p class="authors">Aidan Li, Uday Kiran Reddy Tadipatri, <span class="me">Mahan Fathi</span>, Sarath Chandar, Ross Goroshin</p>
+          </li>
+          <li class="paper">
+            <p class="venue">ICML 2025</p>
+            <h3><a href="https://proceedings.mlr.press/v267/elmoznino25b.html">In-Context Learning and Occam’s Razor</a></h3>
+            <p class="authors">Eric Elmoznino, Tom Marty, Tejas Kasetty, Leo Gagnon, Sarthak Mittal, <span class="me">Mahan Fathi</span>, Dhanya Sridhar, Guillaume Lajoie</p>
+          </li>
+          <li class="paper">
+            <p class="venue">ICLR 2024</p>
+            <h3><a href="https://openreview.net/forum?id=A18gWgc5mi">Course Correcting Koopman Representations</a></h3>
+            <p class="authors"><span class="me">Mahan Fathi</span>, Clement Gehring, Jonathan Pilault, David Kanaa, <span class="nw">Pierre-Luc Bacon</span>, Ross Goroshin</p>
+          </li>
+          <li class="paper">
+            <p class="venue">NeurIPS 2023</p>
+            <h3><a href="https://arxiv.org/abs/2306.09539">Block-State Transformers</a></h3>
+            <p class="authors"><span class="me">Mahan Fathi</span>*, Jonathan Pilault*, Orhan Firat, Christopher Pal, <span class="nw">Pierre-Luc Bacon</span>, Ross Goroshin</p>
+          </li>
+          <li class="paper">
+            <p class="venue">MSc Thesis, 2024</p>
+            <h3><a href="https://papyrus.bib.umontreal.ca/xmlui/handle/1866/32831">Beyond the Horizon: Improved Long-Range Sequence Modeling, from Dynamical Systems to Language</a></h3>
+            <p class="authors"><span class="me">Mahan Fathi</span>, Université de Montréal</p>
+          </li>
+        </ol>
 
-				<!-- Footer -->
-					<div id="footer" style="display: flex; color: white; font-size: 24px;">
-							&nbsp; <p onclick="copyToClipboard(event, 'mfathi@nvidia.com')">mfathi@nvidia.com</p>
-					</div>
+        <h3 class="sublabel">NVIDIA technical reports</h3>
+        <ol class="papers">
+          <li class="paper">
+            <p class="venue">Technical Report, 2026</p>
+            <h3><a href="https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf">Nemotron 3.5 Super and Lightning: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Models for Agentic AI</a></h3>
+            <p class="authors">NVIDIA</p>
+          </li>
+          <li class="paper">
+            <p class="venue">arXiv 2026</p>
+            <h3><a href="https://arxiv.org/abs/2606.15007">Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning</a></h3>
+            <p class="authors">NVIDIA</p>
+          </li>
+          <li class="paper">
+            <p class="venue">arXiv 2026</p>
+            <h3><a href="https://arxiv.org/abs/2604.12374">Nemotron 3 Super: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning</a></h3>
+            <p class="authors">NVIDIA</p>
+          </li>
+          <li class="paper">
+            <p class="venue">arXiv 2025</p>
+            <h3><a href="https://arxiv.org/abs/2512.20856">NVIDIA Nemotron 3: Efficient and Open Intelligence</a></h3>
+            <p class="authors">NVIDIA</p>
+          </li>
+        </ol>
 
-			</div>
+        <p class="note">* Equal contribution. Everything is also on <a href="https://scholar.google.com/citations?hl=en&amp;user=qQkPvIkAAAAJ">Google Scholar</a>.</p>
+      </section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/onclick.js"></script>
+      <section class="section" aria-labelledby="edu-h">
+        <h2 id="edu-h" class="label">Education</h2>
+        <ol class="entries compact">
+          <li class="entry">
+            <div class="entry-head">
+              <h3><a href="https://papyrus.bib.umontreal.ca/xmlui/handle/1866/32831">M.Sc. in Computer Science</a></h3>
+              <p class="when"><time datetime="2021-01">Jan 2021</time> – <time datetime="2024-01">Jan 2024</time></p>
+            </div>
+            <p class="role">Université de Montréal &amp; Mila <span class="where">Dean’s List</span></p>
+          </li>
+          <li class="entry">
+            <div class="entry-head">
+              <h3><a href="https://drive.google.com/file/d/12cIxzDXKtyb9yBuGUFMo0O03pQOT9hxT/view">B.Sc. in Mechanical Engineering</a></h3>
+              <p class="when"><time datetime="2013-09">Sep 2013</time> – <time datetime="2017-07">Jul 2017</time></p>
+            </div>
+            <p class="role">Sharif University of Technology</p>
+          </li>
+          <li class="entry">
+            <div class="entry-head">
+              <h3>High School, NODET</h3>
+              <p class="when"><time datetime="2009-09">Sep 2009</time> – <time datetime="2013-06">Jun 2013</time></p>
+            </div>
+            <p class="role">National Organization for Development of Exceptional Talents <span class="where">Mathematics &amp; Physics</span></p>
+          </li>
+        </ol>
+      </section>
 
-	</body>
+      <section class="section" aria-labelledby="tools-h">
+        <h2 id="tools-h" class="label">Toolkit</h2>
+        <dl class="tools">
+          <div>
+            <dt>Frameworks</dt>
+            <dd>
+              <span class="grp"><code>JAX</code><b class="heart" role="img" aria-label="a favourite" title="a favourite">♥&#xFE0E;</b>, <code>PyTorch</code>, TensorFlow</span>
+              <span class="grp"><code>Ray</code>, <code>vLLM</code>, <code>NeMo-*</code>, <code>verl</code>, <code>SLURM</code></span>
+              <span class="grp"><code>Triton</code>, <code>Pallas</code> and some CUDA</span>
+              <span class="grp">Flax, Haiku, Optax, <code>shard_map</code><b class="heart" role="img" aria-label="a favourite" title="a favourite">♥&#xFE0E;</b></span>
+              <span class="grp">XM and Google infrastructure</span>
+            </dd>
+          </div>
+          <div>
+            <dt>Data</dt>
+            <dd>
+              <span class="grp">Apache Spark, SparkSQL, Apache Kafka</span>
+              <span class="grp">Apache Flink, Apache Beam</span>
+              <span class="grp">HDFS, YARN</span>
+              <span class="grp">PostgreSQL, MySQL</span>
+              <span class="grp">Redis, MongoDB</span>
+            </dd>
+          </div>
+          <div>
+            <dt>Languages</dt>
+            <dd>C/C++, Python, JS, Java, Lua, SQL</dd>
+          </div>
+          <div>
+            <dt>Otherwise</dt>
+            <dd>10+ years on Linux. Counter-Strike, hip-hop and Emacs<b class="heart" role="img" aria-label="a favourite" title="a favourite">♥&#xFE0E;</b>. Speaks English and Farsi.</dd>
+          </div>
+        </dl>
+      </section>
+
+    </main>
+
+    <footer class="titleblock" aria-label="Contact">
+      <div class="tb-cell tb-name">
+        <span class="tb-k">Drawn by</span>
+        <span class="tb-v">Mahan Fathi <span class="fa" lang="fa" dir="rtl">ماهان فتحی</span></span>
+      </div>
+      <div class="tb-cell tb-mail">
+        <span class="tb-k">Correspondence</span>
+        <span class="tb-v">
+          <a href="mailto:mfathi@nvidia.com">mfathi@nvidia.com</a>
+          <button class="copy" type="button" data-copy="mfathi@nvidia.com" aria-label="Copy email address">copy</button><span class="vh" role="status"></span>
+        </span>
+      </div>
+      <div class="tb-cell tb-links">
+        <span class="tb-k">Elsewhere</span>
+        <span class="tb-v">
+          <a href="https://scholar.google.com/citations?hl=en&amp;user=qQkPvIkAAAAJ">Scholar</a>
+          <a href="https://github.com/MahanFathi">GitHub</a>
+          <a href="https://www.linkedin.com/in/mahanfathi/">LinkedIn</a>
+          <a href="https://x.com/MahanFathi">X</a>
+        </span>
+      </div>
+      <div class="tb-cell tb-sheet">
+        <span class="tb-k">Sheet</span>
+        <span class="tb-v sheet-switch" role="group" aria-label="Colour scheme">
+          <button type="button" data-sheet="light">Vellum</button>
+          <button type="button" data-sheet="dark">Blueprint</button>
+        </span>
+      </div>
+      <div class="tb-cell tb-scale">
+        <span class="tb-k">Scale</span>
+        <span class="tb-v">1&thinsp;:&thinsp;1</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <svg class="plotter" aria-hidden="true" focusable="false"></svg>
+</body>
 </html>
