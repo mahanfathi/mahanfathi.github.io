@@ -490,7 +490,7 @@ h1 {
   margin: 5.5rem 0 3rem;
   display: grid;
   /* the sheet cell gets the room to keep Auto · Vellum · Blueprint on one line */
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.3fr) minmax(0, .7fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(min-content, 1.3fr) minmax(0, .7fr);
   grid-template-areas:
     "name  name  mail  mail"
     "links links sheet meta";
@@ -533,7 +533,7 @@ h1 {
 .sheet-switch button:hover { color: var(--accent); }
 .copy.done { color: var(--accent); }
 
-.sheet-switch { gap: .2rem .9rem; }
+.sheet-switch { gap: .2rem .9rem; flex-wrap: nowrap; white-space: nowrap; }
 .sheet-switch button[aria-pressed="true"] {
   color: var(--ink);
   text-decoration: underline;
@@ -611,7 +611,7 @@ html:not(.js) .copy { visibility: hidden; }
   .section > .label { position: static; grid-row: auto; padding: 0 0 1rem; }
 
   .titleblock {
-    grid-template-columns: minmax(0, 1.45fr) minmax(0, .55fr);
+    grid-template-columns: minmax(min-content, 1.45fr) minmax(0, .55fr);
     grid-template-areas:
       "name  name"
       "mail  mail"
