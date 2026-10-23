@@ -1,9 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <style>
-    .p { fill: #f5f3ee; } .i { stroke: #1b1d22; } .r { stroke: #b4452f; }
-    @media (prefers-color-scheme: dark) { .p { fill: #102542; } .i { stroke: #eaf0f8; } .r { stroke: #ffa48f; } }
-  </style>
-  <rect class="p" x="2" y="2" width="60" height="60" rx="10"/>
-  <path class="i" d="M12 40 C 20 18, 28 18, 32 32 S 44 46, 52 24" fill="none" stroke-width="4" stroke-linecap="round"/>
-  <circle class="r" cx="32" cy="32" r="4.5" fill="none" stroke-width="3"/>
+  <!-- MF, drawn as monoline strokes in vellum on a blueprint tile -->
+  <rect width="64" height="64" rx="13" fill="#102542"/>
+  <g fill="none" stroke="#f5f3ee" stroke-width="5.5" stroke-linejoin="miter" stroke-miterlimit="4">
+    <path d="M11 47V17.5L20.25 35L29.5 17.5V47"/>
+    <path d="M39.5 47V17.5H55M39.5 32H52.5"/>
+  </g>
 </svg>
