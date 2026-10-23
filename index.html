@@ -19,7 +19,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <script>
-    // Pick the sheet before first paint so a saved choice never flashes.
+    // Pick the sheet before first paint so a saved choice never flashes;
+    // with none saved, the system's light or dark appearance decides (Auto).
     (function () {
       var d = document.documentElement;
       d.classList.add('js');
@@ -254,6 +255,7 @@
       <div class="tb-cell tb-sheet">
         <span class="tb-k">Sheet</span>
         <span class="tb-v sheet-switch" role="group" aria-label="Colour scheme">
+          <button type="button" data-sheet="auto" title="Follow your system’s light or dark appearance">Auto</button>
           <button type="button" data-sheet="light">Vellum</button>
           <button type="button" data-sheet="dark">Blueprint</button>
         </span>

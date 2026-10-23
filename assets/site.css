@@ -489,7 +489,8 @@ h1 {
 .titleblock {
   margin: 5.5rem 0 3rem;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* the sheet cell gets the room to keep Auto · Vellum · Blueprint on one line */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.3fr) minmax(0, .7fr);
   grid-template-areas:
     "name  name  mail  mail"
     "links links sheet meta";
@@ -539,6 +540,7 @@ h1 {
   text-decoration-thickness: 1px;
   text-underline-offset: .45em;
 }
+.sheet-switch button.current { color: var(--ink-2); }   /* the sheet Auto is showing */
 html:not(.js) .tb-sheet .tb-v,
 html:not(.js) .copy { visibility: hidden; }
 
@@ -609,7 +611,7 @@ html:not(.js) .copy { visibility: hidden; }
   .section > .label { position: static; grid-row: auto; padding: 0 0 1rem; }
 
   .titleblock {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, .55fr);
     grid-template-areas:
       "name  name"
       "mail  mail"

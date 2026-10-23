@@ -9,30 +9,37 @@
 
   /* ---------- sheet: vellum / blueprint ---------- */
 
+  // Auto (the default) follows the system's appearance, live, including
+  // macOS switching itself at dusk; Vellum or Blueprint pins a sheet.
   var PAPER = { light: '#f5f3ee', dark: '#102542' };
+  var metas = document.querySelectorAll('meta[name="theme-color"]');
+  metas.forEach(function (m) { m.dataset.auto = m.getAttribute('content'); });
 
   function effectiveTheme() {
     return root.dataset.theme || (darkQuery.matches ? 'dark' : 'light');
   }
 
   function syncSheet() {
-    var theme = effectiveTheme();
+    var mode = root.dataset.theme || 'auto', theme = effectiveTheme();
     document.querySelectorAll('[data-sheet]').forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b.dataset.sheet === theme));
+      b.setAttribute('aria-pressed', String(b.dataset.sheet === mode));
+      b.classList.toggle('current', mode === 'auto' && b.dataset.sheet === theme);   // what Auto resolved to
     });
-    if (root.dataset.theme) {
-      document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) {
-        m.setAttribute('content', PAPER[theme]);
-      });
-    }
+    metas.forEach(function (m) {
+      m.setAttribute('content', mode === 'auto' ? m.dataset.auto : PAPER[theme]);
+    });
   }
 
   document.querySelectorAll('[data-sheet]').forEach(function (b) {
     b.addEventListener('click', function () {
       var flip = function () {
         root.classList.add('switching');
-        root.dataset.theme = b.dataset.sheet;
-        try { localStorage.setItem('sheet', b.dataset.sheet); } catch (e) {}
+        if (b.dataset.sheet === 'auto') delete root.dataset.theme;
+        else root.dataset.theme = b.dataset.sheet;
+        try {
+          if (b.dataset.sheet === 'auto') localStorage.removeItem('sheet');
+          else localStorage.setItem('sheet', b.dataset.sheet);
+        } catch (e) {}
         syncSheet();
         void getComputedStyle(document.body).color;   // commit the new colours with transitions off
         root.classList.remove('switching');
