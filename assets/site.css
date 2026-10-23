@@ -9,6 +9,8 @@
   --ink-2:   #555961;
   --ink-3:   #686b73;
   --mark:    #8b8e95;
+  --pencil:  #3a3d44;
+  --ground:  .22;
   --rule:    #e0ddd5;
   --rule-2:  #c8c4ba;
   --accent:  #2b4f9c;
@@ -35,6 +37,8 @@
     --ink-2:  #b2c2da;
     --ink-3:  #7891b5;
     --mark:   #7891b5;
+    --pencil: #eef3fb;
+    --ground: .19;
     --rule:   #20406b;
     --rule-2: #31578c;
     --accent: #a6d4ff;
@@ -52,6 +56,8 @@
   --ink-2:  #b2c2da;
   --ink-3:  #7891b5;
   --mark:   #7891b5;
+  --pencil: #eef3fb;
+  --ground: .19;
   --rule:   #20406b;
   --rule-2: #31578c;
   --accent: #a6d4ff;
@@ -72,6 +78,9 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 2rem;
 }
+/* nothing, not even the margin figure mid-resize, may scroll the page sideways
+   (clip, unlike hidden, keeps the sticky section labels working) */
+html, body { overflow-x: clip; }
 @media (min-width: 760px) { html { font-size: 19px; } }
 
 body {
@@ -179,7 +188,6 @@ code {
 .where,
 .venue,
 .elsewhere,
-.tools dt,
 .tb-k,
 .copy,
 .sheet-switch button {
@@ -476,30 +484,6 @@ h1 {
   color: var(--ink-3);
 }
 
-/* toolkit */
-
-.tools { display: flex; flex-direction: column; gap: .8rem; max-width: var(--col); }
-.tools > div {
-  display: grid;
-  grid-template-columns: 6.2rem minmax(0, 1fr);
-  gap: 0 1rem;
-  align-items: baseline;
-}
-.tools dt { color: var(--ink-3); }
-.tools dd { font-size: .95rem; line-height: 1.6; color: var(--ink-2); }
-.tools code { color: var(--ink); }
-.tools .grp { display: block; }
-
-.heart {
-  color: var(--red);
-  font-weight: 400;
-  font-size: .62em;
-  vertical-align: .55em;
-  margin-left: .12em;
-  line-height: 0;
-  font-family: var(--serif);
-}
-
 /* ---------- title block ---------- */
 
 .titleblock {
@@ -564,27 +548,36 @@ html:not(.js) .copy { visibility: hidden; }
   position: absolute;
   top: 0;
   left: 0;
-  width: 0;
-  height: 0;
-  overflow: visible;
   pointer-events: none;
   display: none;
 }
 .plotter.on { display: block; }
-@media (max-width: 1179.98px) { .plotter.on { display: none; } }
-.plotter .truth  { fill: none; stroke: var(--mark); stroke-width: 1; }
-.plotter .roll   { fill: none; stroke: var(--accent); stroke-width: 1; stroke-dasharray: 2.5 3; opacity: .85; }
-.plotter .fix    { stroke: var(--red); stroke-width: 1; }
-.plotter .knot   { fill: var(--paper); stroke: var(--red); stroke-width: 1; }
-.plotter .nib    { fill: var(--ink); }
-.plotter .axis   { stroke: var(--rule-2); stroke-width: 1; }
-.plotter text {
+@media (max-width: 1179.98px) { .plotter.on:not(.ground) { display: none; } }
+.plotter canvas { display: block; }
+
+/* without a margin, the figure is drawn large and faint behind the text */
+.plotter.ground { z-index: -1; }
+.plotter.ground canvas { opacity: var(--ground); }
+.plotter.ground .plot-legend { display: none; }
+
+.plot-legend {
+  position: absolute;
+  top: 0;
+  left: 0;
   font-family: var(--mono);
   font-size: 9px;
   letter-spacing: .12em;
-  fill: var(--ink-3);
   text-transform: uppercase;
+  color: var(--ink-3);
 }
+.plot-legend span {
+  display: block;
+  height: 13px;
+  line-height: 13px;
+  padding-left: 20px;
+  white-space: nowrap;
+}
+.plot-legend .fig { padding-left: 0; margin-bottom: 6px; }
 
 /* ---------- small screens ---------- */
 
@@ -614,9 +607,6 @@ html:not(.js) .copy { visibility: hidden; }
   .section > .label,
   .section > :not(.label) { grid-column: 1; }
   .section > .label { position: static; grid-row: auto; padding: 0 0 1rem; }
-
-  .tools > div { grid-template-columns: minmax(0, 1fr); }
-  .tools dt { margin-bottom: .1rem; }
 
   .titleblock {
     grid-template-columns: repeat(2, minmax(0, 1fr));
